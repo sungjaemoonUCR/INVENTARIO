@@ -93,7 +93,7 @@ class Products extends Admin_Controller
             redirect('dashboard', 'refresh');
         }
 
-		$this->form_validation->set_rules('product_name', 'Product name', 'trim|required',
+		$this->form_validation->set_rules('product_name', 'Nombre de producto', 'trim|required',
 		array('required' => '<span style ="color: red; font-size: 20px;">POR FAVOR ingrese %s'));
 		$this->form_validation->set_rules('sku', 'Código', 'trim|required',
 		array('required' => '<span style ="color: red; font-size: 20px;">POR FAVOR ingrese %s'));
@@ -118,6 +118,7 @@ class Products extends Admin_Controller
         		'qty' => $this->input->post('qty'),
         		'image' => $upload_image,
         		'description' => $this->input->post('description'),
+                'buy_history' => $this->input->post('buy_history'),
         		'attribute_value_id' => json_encode($this->input->post('attributes_value_id')),
         		'brand_id' => json_encode($this->input->post('brands')),
         		'category_id' => json_encode($this->input->post('category')),
@@ -206,12 +207,18 @@ class Products extends Admin_Controller
             redirect('dashboard', 'refresh');
         }
 
-        $this->form_validation->set_rules('product_name', 'Product name', 'trim|required');
-        $this->form_validation->set_rules('sku', 'SKU', 'trim|required');
-        $this->form_validation->set_rules('price', 'Price', 'trim|required');
-        $this->form_validation->set_rules('qty', 'Qty', 'trim|required');
-        $this->form_validation->set_rules('store', 'Store', 'trim|required');
-        $this->form_validation->set_rules('availability', 'Availability', 'trim|required');
+        $this->form_validation->set_rules('product_name', 'Nombre de producto', 'trim|required',
+        array('required' => '<span style ="color: red; font-size: 20px;">POR FAVOR ingrese %s'));
+        $this->form_validation->set_rules('sku', 'Código', 'trim|required',
+        array('required' => '<span style ="color: red; font-size: 20px;">POR FAVOR ingrese %s'));
+        $this->form_validation->set_rules('price', 'Precio', 'trim|required',
+        array('required' => '<span style ="color: red; font-size: 20px;">POR FAVOR ingrese %s'));
+        $this->form_validation->set_rules('qty', 'Cantidad', 'trim|required',
+        array('required' => '<span style ="color: red; font-size: 20px;">POR FAVOR ingrese %s'));
+        $this->form_validation->set_rules('store', 'Tienda', 'trim|required',
+        array('required' => '<span style ="color: red; font-size: 20px;">POR FAVOR ingrese %s'));
+        $this->form_validation->set_rules('availability', 'Disponibilidad', 'trim|required',
+        array('required' => '<span style ="color: red; font-size: 20px;">POR FAVOR ingrese %s'));
 
         if ($this->form_validation->run() == TRUE) {
             // true case
@@ -222,6 +229,7 @@ class Products extends Admin_Controller
                 'price' => $this->input->post('price'),
                 'qty' => $this->input->post('qty'),
                 'description' => $this->input->post('description'),
+                'buy_history' => $this->input->post('buy_history'),
                 'attribute_value_id' => json_encode($this->input->post('attributes_value_id')),
                 'brand_id' => json_encode($this->input->post('brands')),
                 'category_id' => json_encode($this->input->post('category')),

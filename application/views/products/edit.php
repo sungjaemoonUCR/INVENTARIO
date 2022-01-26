@@ -43,15 +43,21 @@
           <form role="form" action="<?php base_url('users/update') ?>" method="post" enctype="multipart/form-data">
               <div class="box-body">
 
-                <?php echo validation_errors(); ?>
+                <?php echo validation_errors(); date_default_timezone_set("America/Costa_Rica"); ?>
 
                 <div class="form-group">
-                  <label>Image Preview: </label>
+                  <div class="form-group">
+                  <label for="gross_amount" class="col-sm-12 control-label">Date: <?php echo date('Y-m-d') ?></label>
+                </div>
+                <div class="form-group">
+                  <label for="gross_amount" class="col-sm-12 control-label">Date: <?php echo date('h:i a') ?></label>
+                </div>
+                  <label>Imagen: </label>
                   <img src="<?php echo base_url() . $product_data['image'] ?>" width="150" height="150" class="img-circle">
                 </div>
 
                 <div class="form-group">
-                  <label for="product_image">Update Image</label>
+                  <label for="product_image">Editar Imagen</label>
                   <div class="kv-avatar">
                       <div class="file-loading">
                           <input id="product_image" name="product_image" type="file">
@@ -60,32 +66,45 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="product_name">Product name</label>
+                  <label for="product_name">Nombre de producto</label>
                   <input type="text" class="form-control" id="product_name" name="product_name" placeholder="Enter product name" value="<?php echo $product_data['name']; ?>"  autocomplete="off"/>
                 </div>
 
                 <div class="form-group">
-                  <label for="sku">SKU</label>
+                  <label for="sku">Código</label>
                   <input type="text" class="form-control" id="sku" name="sku" placeholder="Enter sku" value="<?php echo $product_data['sku']; ?>" autocomplete="off" />
                 </div>
 
                 <div class="form-group">
-                  <label for="price">Price</label>
+                  <label for="price">Precio</label>
                   <input type="text" class="form-control" id="price" name="price" placeholder="Enter price" value="<?php echo $product_data['price']; ?>" autocomplete="off" />
                 </div>
 
                 <div class="form-group">
-                  <label for="qty">Qty</label>
+                  <label for="qty">Cantidad</label>
                   <input type="text" class="form-control" id="qty" name="qty" placeholder="Enter Qty" value="<?php echo $product_data['qty']; ?>" autocomplete="off" />
                 </div>
 
                 <div class="form-group">
-                  <label for="description">Description</label>
+                  <label for="description">Descripción</label>
                   <textarea type="text" class="form-control" id="description" name="description" placeholder="Enter 
                   description" autocomplete="off">
                     <?php echo $product_data['description']; ?>
                   </textarea>
                 </div>
+
+                <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                   Historial
+                 </a>
+
+                <div class="collapse" id="collapseExample">
+                   <div class="form-group">
+                  <label for="buy_history">Historial</label>
+                  <textarea type="text" class="form-control" id="buy_history" name="buy_history" placeholder="Enter buy history" autocomplete="off" rows="60"><?php echo $product_data['buy_history'];?> &#13;&#10; Fecha: <?php echo date('Y-m-d') ?> <?php echo date('h:i a') ?>
+                  </textarea>
+                </div>
+                </div>
+
 
                 <?php $attribute_id = json_decode($product_data['attribute_value_id']); ?>
                 <?php if($attributes): ?>
@@ -145,7 +164,7 @@
 
               <div class="box-footer">
                 <button type="submit" class="btn btn-primary">Save Changes</button>
-                <a href="<?php echo base_url('users/') ?>" class="btn btn-warning">Back</a>
+                <a href="<?php echo base_url('products/') ?>" class="btn btn-warning">Back</a>
               </div>
             </form>
           <!-- /.box-body -->
@@ -167,6 +186,7 @@
   $(document).ready(function() {
     $(".select_group").select2();
     $("#description").wysihtml5();
+
 
     $("#mainProductNav").addClass('active');
     $("#manageProductNav").addClass('active');

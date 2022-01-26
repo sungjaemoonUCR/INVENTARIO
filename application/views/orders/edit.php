@@ -54,24 +54,45 @@
 
                 <div class="col-md-4 col-xs-12 pull pull-left">
 
-                  <div class="form-group">
-                    <label for="gross_amount" class="col-sm-5 control-label" style="text-align:left;">Customer Name</label>
+                <div class="form-group">
+                    <label for="gross_amount" class="col-sm-5 control-label" style="text-align:left;">Cedula fisica</label>
                     <div class="col-sm-7">
-                      <input type="text" class="form-control" id="customer_name" name="customer_name" placeholder="Enter Customer Name" value="<?php echo $order_data['order']['customer_name'] ?>" autocomplete="off"/>
+                      <input type="text" class="form-control" id="customer_name" name="customer_name" placeholder="cedula" autocomplete="off" />
+                    </div>
+
+                  </div>
+                  <div class="form-group">
+                    <label for="gross_amount" class="col-sm-5 control-label" style="text-align:left;">Cedula juridica</label>
+                    <div class="col-sm-7">
+                      <input type="text" class="form-control" id="customer_name" name="customer_name" placeholder="cedula" autocomplete="off" />
+                    </div>
+                  </div>
+		
+                  <div class="form-group">
+                    <label for="gross_amount" class="col-sm-5 control-label" style="text-align:left;">Nombre de Cliente</label>
+                    <div class="col-sm-7">
+                      <input type="text" class="form-control" id="customer_name" name="customer_name" placeholder="Nombre" value="<?php echo $order_data['order']['customer_name'] ?>" autocomplete="off"/>
                     </div>
                   </div>
 
                   <div class="form-group">
-                    <label for="gross_amount" class="col-sm-5 control-label" style="text-align:left;">Customer Address</label>
+                    <label for="gross_amount" class="col-sm-5 control-label" style="text-align:left;">Dirección</label>
                     <div class="col-sm-7">
-                      <input type="text" class="form-control" id="customer_address" name="customer_address" placeholder="Enter Customer Address" value="<?php echo $order_data['order']['customer_address'] ?>" autocomplete="off">
+                      <input type="text" class="form-control" id="customer_address" name="customer_address" placeholder="dirección" value="<?php echo $order_data['order']['customer_address'] ?>" autocomplete="off">
                     </div>
                   </div>
 
                   <div class="form-group">
-                    <label for="gross_amount" class="col-sm-5 control-label" style="text-align:left;">Customer Phone</label>
+                    <label for="gross_amount" class="col-sm-5 control-label" style="text-align:left;">Número</label>
                     <div class="col-sm-7">
-                      <input type="text" class="form-control" id="customer_phone" name="customer_phone" placeholder="Enter Customer Phone" value="<?php echo $order_data['order']['customer_phone'] ?>" autocomplete="off">
+                      <input type="text" class="form-control" id="customer_phone" name="customer_phone" placeholder="numero" value="<?php echo $order_data['order']['customer_phone'] ?>" autocomplete="off">
+                    </div>
+                  </div>
+
+                   <div class="form-group">
+                    <label for="gross_amount" class="col-sm-5 control-label" style="text-align:left;">Correo electrónico</label>
+                    <div class="col-sm-7">
+                      <input type="text" class="form-control" id="customer_phone" name="customer_phone" placeholder="Ejemplo@correo.com" value="<?php echo $order_data['order']['customer_phone'] ?>" autocomplete="off">
                     </div>
                   </div>
                 </div>

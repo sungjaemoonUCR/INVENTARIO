@@ -48,13 +48,13 @@
             <table id="manageTable" class="table table-bordered table-striped">
               <thead>
               <tr>
-                <th>Bill no</th>
-                <th>Customer Name</th>
-                <th>Customer Phone</th>
-                <th>Date Time</th>
-                <th>Total Products</th>
-                <th>Total Amount</th>
-                <th>Paid status</th>
+                <th># Factura</th>
+                <th>Nombre de cliente</th>
+                <th>Número de cliente</th>
+                <th>Fecha</th>
+                <th>Total tipo de productos</th>
+                <th>Total precio</th>
+                <th>Estado</th>
                 <?php if(in_array('updateOrder', $user_permission) || in_array('viewOrder', $user_permission) || in_array('deleteOrder', $user_permission)): ?>
                   <th>Action</th>
                 <?php endif; ?>

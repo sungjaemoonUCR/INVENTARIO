@@ -43,9 +43,16 @@
           <form role="form" action="<?php base_url('users/create') ?>" method="post" enctype="multipart/form-data">
               <div class="box-body">
 
-                <?php echo validation_errors(); ?>
+                <?php echo validation_errors(); date_default_timezone_set("America/Costa_Rica"); ?>
 
                 <div class="form-group">
+                  <div class="form-group">
+                  <label for="gross_amount" class="col-sm-12 control-label">Date: <?php echo date('Y-m-d') ?></label>
+                </div>
+                <div class="form-group">
+                  <label for="gross_amount" class="col-sm-12 control-label">Date: <?php echo date('h:i a') ?></label>
+                </div>
+
 
                   <label for="product_image">Imagen</label>
                   <div class="kv-avatar">
@@ -57,7 +64,7 @@
 
                 <div class="form-group">
                   <label for="product_name">Nombre de producto</label>
-                  <input type="text" class="form-control" id="product_name" name="product_name" placeholder="Enter product name" autocomplete="off"/>
+                  <input type="text" class="form-control" id="product_name" name="product_name"  placeholder="Enter product name" autocomplete="off"/>
                 </div>
 
                 <div class="form-group">
@@ -81,6 +88,20 @@
                   description" autocomplete="off">
                   </textarea>
                 </div>
+
+               
+              
+                 <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                   Historial
+                 </a>
+
+                <div class="collapse" id="collapseExample">
+                   <div class="form-group">
+                  <label for="buy_history"></label>
+                  <textarea type="text" class="form-control" id="buy_history" name="buy_history" autocomplete="off"  rows="60"> Fecha: <?php echo date('Y-m-d') ?> <?php echo date('h:i a') ?>
+                  </textarea>
+                   </div>
+              </div>
 
                 <?php if($attributes): ?>
                   <?php foreach ($attributes as $k => $v): ?>
@@ -137,6 +158,7 @@
                 <button type="submit" class="btn btn-primary">Guardar cambios</button>
                 <a href="<?php echo base_url('products/') ?>" class="btn btn-warning">Regresar</a>
               </div>
+
             </form>
           <!-- /.box-body -->
         </div>
@@ -156,6 +178,7 @@
   $(document).ready(function() {
     $(".select_group").select2();
     $("#description").wysihtml5();
+
 
     $("#mainProductNav").addClass('active');
     $("#addProductNav").addClass('active');

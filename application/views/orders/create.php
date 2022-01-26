@@ -54,6 +54,21 @@
 
                 <div class="col-md-4 col-xs-12 pull pull-left">
 
+                    <div class="form-group">
+                    <label for="gross_amount" class="col-sm-5 control-label" style="text-align:left;">Cedula fisica</label>
+                    <div class="col-sm-7">
+                      <input type="text" class="form-control" id="customer_name" name="customer_name" placeholder="cedula" autocomplete="off" />
+                    </div>
+
+                  </div>
+                  <div class="form-group">
+                    <label for="gross_amount" class="col-sm-5 control-label" style="text-align:left;">Cedula juridica</label>
+                    <div class="col-sm-7">
+                      <input type="text" class="form-control" id="customer_name" name="customer_name" placeholder="cedula" autocomplete="off" />
+                    </div>
+                  
+
+                  </div>
                   <div class="form-group">
                     <label for="gross_amount" class="col-sm-5 control-label" style="text-align:left;">Nombre de Cliente</label>
                     <div class="col-sm-7">
@@ -74,6 +89,13 @@
                       <input type="text" class="form-control" id="customer_phone" name="customer_phone" placeholder="Número de contacto" autocomplete="off">
                     </div>
                   </div>
+                  <div class="form-group">
+                    <label for="gross_amount" class="col-sm-5 control-label" style="text-align:left;">Correo electronico</label>
+                    <div class="col-sm-7">
+                      <input type="text" class="form-control" id="customer_phone" name="customer_phone" placeholder="Correo" autocomplete="off">
+                    </div>
+                  </div>
+
                 </div>
                 
                 
@@ -153,6 +175,16 @@
                     <div class="col-sm-7">
                       <input type="text" class="form-control" id="net_amount" name="net_amount" disabled autocomplete="off">
                       <input type="hidden" class="form-control" id="net_amount_value" name="net_amount_value" autocomplete="off">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="paid_status" class="col-sm-5 control-label">Paid Status</label>
+                    <div class="col-sm-7">
+                      <select type="text" class="form-control" id="paid_status" name="paid_status">
+                        <option value="1">Paid</option>
+                        <option value="2">Unpaid</option>
+                      </select>
                     </div>
                   </div>
 
